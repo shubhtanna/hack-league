@@ -8,6 +8,7 @@ import { cloudinaryConnect } from "./config/cloudinary.js";
 import userRouter from "./routes/user.js"
 import productRouter from "./routes/product.js"
 import vendorRouter from "./routes/vendor.js"
+import individualRouter from "./routes/individual.js"
 
 const app = express();
 
@@ -36,6 +37,7 @@ cloudinaryConnect();
 app.use("/api/v1/auth",userRouter);
 app.use("/api/v1/product",productRouter)
 app.use("/api/v1/vendor",vendorRouter)
+app.use("/api/v1/individual",individualRouter)
 
 app.get("/" , (req,res) => {
     return respond(res,"Your Server is up and running",200,true)
